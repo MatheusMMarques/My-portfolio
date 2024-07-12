@@ -1,0 +1,120 @@
+.project-container {
+    height: 130vh;
+}
+
+.title-projects {
+    display: flex;
+    justify-content: center;
+}
+
+.title-projects h2{
+    color: #FFF;
+    font-family: "Anton", sans-serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+    margin-bottom: 2.5em;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.project h3 {
+    font-family: "Kanit", sans-serif;
+    color: #FFF;
+    font-size: 2em;
+}
+
+.project h6{
+    font-family: "Kanit", sans-serif;
+    color: rgba(162, 179, 179, 0.596);
+    font-size: 1em;
+}
+
+.project h3, h6{
+    margin-left: 10%;
+}
+
+.img-project {
+    width: 100%;
+}
+
+.image{
+    width: 75%;
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.image:hover{
+    transform: scale(1.05);
+}
+
+@media (max-width: 1157px) {
+    .project h3 {
+        font-size: 1.6em;
+    }
+
+    .project-container{
+        height: 75vh;
+    }
+}
+
+@media (max-width: 788px) {
+
+    .project-container{
+        height: 180vh;
+    }
+
+    .projects{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image{
+        width: 30%;
+    }
+
+    .project h3, h6{
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 529px) {
+
+    .project-container{
+        height: 140vh;
+    }
+
+    .project h3 {
+        font-size: 1.3em;
+    }
+
+    .project h6 {
+        font-size: 0.8em;
+    }
+
+    .title-projects h2{
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 383px), (max-height: 667px) {
+
+    .project-container{
+        height: 120vh;
+    }
+
+    .project h3 {
+        font-size: 1em;
+    }
+
+    .project h6 {
+        font-size: 0.5em;
+    }
+
+    .title-projects h2{
+        font-size: 2em;
+    }
+}

@@ -1,0 +1,199 @@
+.text {
+    text-align: left;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 10rem;
+}
+
+.h2-content {
+    font-size: 10em;
+    line-height: 1em;
+}
+
+.minor-text {
+    font-size: 2rem;
+    display: block;
+    line-height: normal;
+    font-family: "Kanit", sans-serif;
+    color: rgba(162, 179, 179, 0.596);
+}
+
+.major-text {
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.3rem;
+}
+
+.about-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgb(46 65 65 / 80%) 0%, rgba(4, 15, 15, 0.9) 50%, rgba(4, 15, 15, 1) 100%);
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container .icon {
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icon-container .icon:hover {
+    animation: bounce 1s linear;
+}
+
+@keyframes bounce {
+
+    20%,
+    50%,
+    80%,
+    to {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    70% {
+        transform: translateY(-15px);
+    }
+
+    90% {
+        transform: translateY(-4px);
+    }
+}
+
+.about-me {
+    font-family: "Kanit", sans-serif;
+    line-height: 16px;
+    text-indent: 5em;
+    font-size: 1.1rem;
+    color: rgba(162, 179, 179, 0.596);
+    display: flex;
+    justify-content: right;
+    padding-bottom: 40px;
+}
+
+@media (max-width: 1118px) {
+    .h2-content {
+        font-size: 7em;
+    }
+}
+
+@media (max-width: 869px) {
+    .h2-content {
+        font-size: 5em;
+    }
+
+    .icon-container .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-me {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 682px) {
+
+    .about-container{
+        height: 85vh;
+    }
+
+    .minor-text {
+        font-size: 1rem;
+        line-height: 0px;
+    }
+
+    .major-text {
+        font-size: 3rem;
+        line-height: 0px;
+        letter-spacing: 2px;
+    }
+
+    .icon-container .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .about-me {
+        font-size: 10px;
+    }
+
+    .about-container{
+        background: transparent;
+    }
+}
+
+@media (max-width: 495px) {
+    
+    .about-container{
+        height: 50vh;
+    }
+    
+    .minor-text {
+        font-size: 0.7rem;
+    }
+
+    .major-text {
+        line-height: 0px;
+        font-size: 2rem;
+        line-height: 0px;
+    }
+
+    .icon-container .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .about-me {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 414px) {
+    .about-me {
+        font-size: 8px;
+    }
+
+    .minor-text {
+        font-size: 0.6rem;
+    }
+
+    .major-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 379px) {
+    
+    .about-container{
+        height: 40vh;
+    }
+    
+    .about-me {
+        font-size: 6px;
+    }
+
+    .minor-text {
+        font-size: 0.5rem;
+    }
+
+    .major-text {
+        font-size: 1.2rem;
+    }
+    .icon-container .icon {
+        width: 10px;
+        height: 10px;
+    }
+}

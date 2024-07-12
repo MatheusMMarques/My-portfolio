@@ -1,0 +1,149 @@
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
+}
+
+.skills-content {
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.skills-content h2 {
+    font-size: 3rem;
+    font-family: "Anton", sans-serif;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.box-container {
+    border: 0.5em solid #040f0fff;
+    padding: 2em;
+    border-radius: 20px;
+    background-color: #040f0fff;
+    width: 100%;
+    max-width: 800px;
+    transition: transform 0.3s ease;
+    box-sizing: border-box; 
+    margin: 0 auto; 
+}
+
+.icons-habillity {
+    max-width: 50em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.icon-h {
+    width: 4rem;
+    height: 4rem;
+    background-color: #2d3a3aff;
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 200ms ease-in-out;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+.icon-h:hover {
+    transform: scale(1.05);
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #2d3a3aff;
+    height: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 90%;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #ffffff;
+    transition: width 300ms ease-in-out;
+}
+
+.skill-name {
+    font-size: 1.5rem;
+    font-family: "Anton", sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 1em;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 1.5s ease-in-out, max-height 800ms ease-in-out;
+}
+
+.skill-name.active {
+    opacity: 1;
+    max-height: 3em;
+}
+
+#javascript:hover {
+    color: #f7df1e;
+}
+
+#node:hover {
+    color: #68a063;
+}
+
+#python:hover {
+    color: #3175c2;
+}
+
+#react:hover {
+    color: #61DBFB;
+}
+
+#java:hover {
+    color: #5382a1;
+}
+
+#bootstrap:hover {
+    color: #563d7c;
+}
+
+#sql:hover {
+    color: #fff;
+}
+
+@media (max-width: 884px) {
+    .box-container {
+        padding: 1em;
+        transform: scale(0.8);
+    }
+}
+
+
+@media (max-width: 758px) {
+    .icon-h {
+        width: 2.9rem;
+        height: 2.9rem;
+    }
+
+    .skills-container h2{
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 636px) {
+    .icon-h {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .skills-container h2{
+        font-size: 2em;
+    }
+}

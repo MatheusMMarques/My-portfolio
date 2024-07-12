@@ -1,0 +1,224 @@
+.contact-container {
+    height: 90vh;
+    background-color:#2d3a3aff;
+}
+
+.infos-content {
+    display: flex;
+   
+}
+
+.about-me-box {
+    width: 50%;
+    margin: 2em 2em 20em 2em;
+    padding: 2em;
+    font-family: "Kanit", sans-serif;
+    background-color: #040f0fff;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid black;
+    box-shadow: rgb(0, 0, 0) 18px 19px 30px -10px;
+}
+
+.form-content {
+    width: 50%;
+    background-color: #040f0fff;
+    padding: 2em;
+    border-radius: 15px;
+    margin: 12em 2em 3em 2em;
+    border: 2px solid black;
+    box-shadow: rgb(0, 0, 0) 18px 19px 30px -10px;
+    transition: transform 0.3s ease;
+}
+
+.title-contact {
+    color: #FFF;
+    font-size: 1em;
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 2em;
+}
+
+.contact-form {
+    transition: transform 0.3s ease;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 0.5em;
+    border-radius:5px;
+    border: 1px solid #fff ;
+    outline: 0;
+    background-color: transparent;
+    opacity: 0.9;
+    color: #FFF;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 1em;
+}
+
+.contact-form textarea {
+    width: 100%;
+    margin-top: 1em;
+    height: 5em;
+    border-radius: 5px;
+    border: 1px solid #fff ;
+    outline: 0;
+    resize: none;
+    padding: 0;
+    margin-bottom: 1em;
+    min-height: 150px;
+    background-color: transparent;
+    opacity: 0.9;
+    color: #FFF;
+    font-family: "Kanit", sans-serif;
+}
+
+.btn {
+    width: 100%;
+    height: 3.5em;
+    padding: 0.5em;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Kanit", sans-serif;
+    background-color:  transparent;
+    color: #FFF;
+    border: 1px solid #fff ;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2d3a3aff;
+}
+
+.form-group{
+    display: flex;
+    gap: 1em;
+}
+
+@media (max-width: 1433px) {
+    .contact-container{
+        height: 95vh;
+    }
+}
+
+@media (max-width: 1303px) {
+    .contact-container{
+        height: 98vh;
+    }
+}
+
+@media (max-width: 1215px) {
+    .contact-container{
+        height: 110vh;
+    }
+}
+
+@media (max-width: 1085px) {
+    .form-content{
+        margin: 12em 2em 10em 2em;
+    }
+
+    .contact-container{
+        height: 120vh;
+    }
+}
+
+@media (max-width: 943px) {
+    
+    .about-me-box{
+        transform: scale(0.9);
+        font-size: 0.9em;
+    }
+
+    .form-content{
+        margin: 12em 2em 16em 2em;
+        transform: scale(0.9);
+    }
+
+    .contact-container{
+        height: 130vh;
+    }
+
+}
+
+@media (max-width: 788px),(min-height: 1024px) {
+    
+    .about-me-box{
+        transform: scale(0.8);
+    }
+
+    .about-me-box span{
+        font-size: 0.9em;
+    }
+
+    .form-content{
+        transform: scale(0.8);
+    }
+
+    .contact-container{
+        height: 100vh;
+        margin-top: 10em;
+    }
+
+}
+
+@media (max-width: 622px) {
+    
+    .infos-content{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .about-me-box{
+        transform: scale(0.9);
+        margin: 0;
+    }
+
+    .about-me-box span{
+        font-size: 0.9em;
+    }
+
+    .form-content{
+        transform: scale(0.9);
+        margin: 0;
+    }
+
+    .contact-container{
+        height: 130vh;
+        margin-top: 10em;
+    }
+
+}
+
+@media (max-width: 460px) {
+
+    .about-me-box span{
+        font-size: 0.8em;
+    }
+
+    .title-contact{
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 376px){
+
+    .about-me-box span{
+        font-size: 0.6em;
+    }
+
+    .title-contact{
+        font-size: 0.8em;
+    }
+
+    .contact-container{
+        height: 150vh;
+        margin-top: 5em;
+    }
+}

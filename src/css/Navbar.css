@@ -1,0 +1,109 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: #FFF;
+}
+
+.navbar h1 {
+  margin: 0;
+  margin-left: 5%;
+  font-size: 2rem;
+  font-family: "League Spartan", sans-serif;
+}
+
+.navbar ul {
+  display: flex;
+  padding: 5px;
+  list-style-type: none;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+}
+
+.navbar-left {
+  cursor: pointer;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.navbar-right li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.animatedLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 20px;
+  position: relative;
+  font-size: 25px;
+}
+
+.animatedLink::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease;
+  /* Transição apenas para a largura */
+}
+
+.animatedLink:hover::after {
+  width: 100%;
+  /* Aumenta a largura da barra até 100% ao passar o mouse */
+}
+
+@media (max-width: 1080px) {
+
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul {
+    padding: 0;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    /* Altera o layout para coluna em telas menores */
+  }
+}
+
+@media (max-width: 682px) {
+  .navbar a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 495px) {
+  .navbar{
+    margin-bottom: 3.5em;
+  }
+
+  .navbar a {
+    font-size: 0.7rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.2rem;
+  }
+}
