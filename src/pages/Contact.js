@@ -13,12 +13,16 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_00tiis6', 'template_uo0e31o', e.target, 'jLPG2nGVbws-MneN6')
-      .then((result) => {
-        console.log('Email sent successfully:', result.text);
-      }, (error) => {
-        console.error('Error sending email:', error.text);
-      });
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      e.target,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    ).then((result) => {
+      console.log('Email sent successfully:', result.text);
+    }, (error) => {
+      console.error('Error sending email:', error.text);
+    });
 
     // Limpar o formulário após o envio
     setFormData({
@@ -31,6 +35,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
 
   return (
     <section className='contact-container'>
