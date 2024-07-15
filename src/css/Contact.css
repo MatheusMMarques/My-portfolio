@@ -98,6 +98,11 @@
     gap: 1em;
 }
 
+.success-message, .error-message{
+    color: white;
+    font-family: "Kanit", sans-serif;
+}
+
 @media (max-width: 1433px) {
     .contact-container{
         height: 95vh;

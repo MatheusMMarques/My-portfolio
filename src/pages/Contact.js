@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
-import '../css/Contact.css'
+import '../css/Contact.css';
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,8 +21,11 @@ const Contact = () => {
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     ).then((result) => {
       console.log('Email sent successfully:', result.text);
+      setEmailSent(true);
+      setEmailError('');
     }, (error) => {
       console.error('Error sending email:', error.text);
+      setEmailError('Erro ao enviar o email. Por favor, tente novamente.');
     });
 
     // Limpar o formulário após o envio
@@ -34,8 +38,8 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setEmailSent(false); // Reset the emailSent state when the user modifies the form
   };
-
 
   return (
     <section className='contact-container'>
@@ -61,11 +65,12 @@ const Contact = () => {
             <textarea id="message" name="message" placeholder='Sua Mensagem' value={formData.message} onChange={handleChange} required />
             <button className='btn' type="submit">Enviar</button>
           </form>
+          {emailSent && <p className="success-message">Email enviado com sucesso!</p>}
+          {emailError && <p className="error-message">{emailError}</p>}
         </div>
       </div>
-
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
