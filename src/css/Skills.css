@@ -1,149 +1,112 @@
 .skills-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 65vh;
+    width: 100%;
+    min-height: 65vh;
+    padding: 96px 24px;
+    background: linear-gradient(180deg, var(--color-background-soft) 0%, var(--color-background) 100%);
+    color: var(--color-text);
 }
 
 .skills-content {
-    text-align: center;
-    margin-bottom: 4em;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto 44px;
+    text-align: left;
 }
 
 .skills-content h2 {
+    margin: 0 0 16px;
     font-size: 3rem;
     font-family: "Anton", sans-serif;
     color: #fff;
     letter-spacing: 2px;
 }
 
-.box-container {
-    border: 0.5em solid #040f0fff;
-    padding: 2em;
-    border-radius: 20px;
-    background-color: #040f0fff;
+.skills-content p {
+    margin: 0;
+    max-width: 760px;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.16rem;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
     width: 100%;
-    max-width: 800px;
-    transition: transform 0.3s ease;
-    box-sizing: border-box; 
-    margin: 0 auto; 
+    max-width: 1120px;
+    margin: 0 auto;
 }
 
-.icons-habillity {
-    max-width: 50em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.stack-card {
+    min-height: 290px;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
+        var(--color-card);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
 }
 
-.icons {
+.stack-card h3 {
+    margin: 0 0 14px;
+    font-family: "Kanit", sans-serif;
+    font-size: 1.18rem;
+    color: #fff;
+}
+
+.stack-card p {
+    margin: 0 0 20px;
+    font-family: "Kanit", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: rgba(224, 236, 236, 0.76);
+}
+
+.stack-tags {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 1em;
+    gap: 8px;
 }
 
-.icon-h {
-    width: 4rem;
-    height: 4rem;
-    background-color: #2d3a3aff;
-    padding: 5px;
-    border-radius: 10px;
-    transition: transform 200ms ease-in-out;
-    margin: 0.5em;
-    cursor: pointer;
+.stack-tags span {
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(45, 58, 58, 0.42);
+    font-family: "Kanit", sans-serif;
+    font-size: 0.82rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.86);
 }
 
-.icon-h:hover {
-    transform: scale(1.05);
-}
-
-.progress-container {
-    width: 100%;
-    background-color: #2d3a3aff;
-    height: 1rem;
-    border-radius: 5px;
-    overflow: hidden;
-    max-width: 90%;
-}
-
-.progress-bar {
-    height: 100%;
-    background-color: #ffffff;
-    transition: width 300ms ease-in-out;
-}
-
-.skill-name {
-    font-size: 1.5rem;
-    font-family: "Anton", sans-serif;
-    color: #fff;
-    letter-spacing: 1px;
-    margin-top: 1em;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 1.5s ease-in-out, max-height 800ms ease-in-out;
-}
-
-.skill-name.active {
-    opacity: 1;
-    max-height: 3em;
-}
-
-#javascript:hover {
-    color: #f7df1e;
-}
-
-#node:hover {
-    color: #68a063;
-}
-
-#python:hover {
-    color: #3175c2;
-}
-
-#react:hover {
-    color: #61DBFB;
-}
-
-#java:hover {
-    color: #5382a1;
-}
-
-#bootstrap:hover {
-    color: #563d7c;
-}
-
-#sql:hover {
-    color: #fff;
-}
-
-@media (max-width: 884px) {
-    .box-container {
-        padding: 1em;
-        transform: scale(0.8);
+@media (max-width: 1020px) {
+    .stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-
-@media (max-width: 758px) {
-    .icon-h {
-        width: 2.9rem;
-        height: 2.9rem;
+@media (max-width: 680px) {
+    .skills-container {
+        padding: 72px 18px;
     }
 
-    .skills-container h2{
-        font-size: 2.5em;
-    }
-}
-
-@media (max-width: 636px) {
-    .icon-h {
-        width: 2rem;
-        height: 2rem;
+    .skills-content h2 {
+        font-size: 2.35rem;
     }
 
-    .skills-container h2{
-        font-size: 2em;
+    .skills-content p {
+        font-size: 1rem;
+    }
+
+    .stack-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stack-card {
+        min-height: auto;
+        padding: 22px;
     }
 }

@@ -10,11 +10,26 @@ const About = () => {
       <div>
         <div className="text">
           <h2 className="h2-content">
-            <span className="minor-text">OI, ME CHAMO MATHEUS 👋</span>
-            <span className="major-text">DESENVOLVEDOR <br /> <span className="icon-container">FRONT-END<a href="https://www.linkedin.com/in/matheus-marques-817a2b20b/"><FontAwesomeIcon className="icon" icon={faLinkedin} style={{ color: "#74C0FC", }}/></a><a href="https://github.com/MatheusMMarques"><FontAwesomeIcon className="icon" icon={faGithub} style={{ color: "#FFF", }} /></a><a href="https://drive.google.com/file/d/1NQOCvmlmpxOMn28cp9PjiI7PnX-Is5Zx/view?usp=sharing"><FontAwesomeIcon className="icon" icon={faFilePdf} style={{ color: "#FFF", }}/></a></span></span>
+            <span className="minor-text">OI, ME CHAMO MATHEUS</span>
+            <span className="major-text">
+              DESENVOLVEDOR <br />
+              <span className="icon-container">
+                FULL STACK
+                <a href="https://www.linkedin.com/in/matheus-marquesdrs/" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon className="icon" icon={faLinkedin} style={{ color: "#74C0FC", }}/>
+                </a>
+                <a href="https://github.com/MatheusMMarques" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon className="icon" icon={faGithub} style={{ color: "#FFF", }} />
+                </a>
+                <a href="/Matheus_Marques_Curriculo.pdf" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon className="icon" icon={faFilePdf} style={{ color: "#FFF", }}/>
+                </a>
+              </span>
+            </span>
           </h2>
           <p className="about-me">
-            TENHO 19 ANOS, ESTOU EM BUSCA DE MINHA PRIMEIRA OPORTUNIDADE<br/>E ESTUDO FRONT-END CERCA DE 2 ANOS.
+            Desenvolvedor com atuação prática em aplicações web, integrações e evolução de produto.
+            Entro em contextos novos com autonomia, entendo o problema e construo caminhos viáveis para entregar.
           </p>
         </div>
       </div>

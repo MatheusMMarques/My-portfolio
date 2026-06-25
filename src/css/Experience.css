@@ -1,0 +1,91 @@
+.experience-container {
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface) 45%, var(--color-background) 100%);
+  color: #fff;
+  padding: 96px 24px;
+  box-sizing: border-box;
+}
+
+.experience-content {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.experience-heading {
+  max-width: 840px;
+  margin-bottom: 42px;
+}
+
+.experience-heading h2 {
+  margin: 0 0 16px;
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.experience-heading p {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: rgba(224, 236, 236, 0.82);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.experience-card {
+  min-height: 210px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: var(--color-card);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
+}
+
+.experience-card h3 {
+  margin: 0 0 14px;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.12rem;
+  color: #fff;
+}
+
+.experience-card p {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: rgba(224, 236, 236, 0.76);
+}
+
+@media (max-width: 1180px) {
+  .experience-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .experience-container {
+    padding: 64px 18px;
+  }
+
+  .experience-heading h2 {
+    font-size: 2.35rem;
+  }
+
+  .experience-heading p {
+    font-size: 1rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    min-height: auto;
+  }
+}

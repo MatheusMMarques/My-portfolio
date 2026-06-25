@@ -1,42 +1,52 @@
+@import './css/colors.css';
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--color-background);
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #040f0fff;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
-section {
-    padding: 50px 0 0 0;
-    box-sizing: border-box;
-    background-color: transparent;
+.App {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(45, 58, 58, 0.36), transparent 34rem),
+        var(--color-background);
 }
 
-section:nth-of-type(even) {
-    background-color: #2d3a3aff;
-    /* Cor de fundo alternada */
-}
-
-.transition {
+.page-section {
     width: 100%;
-    height: 100px;
-    background: linear-gradient(180deg, #040f0fff 0%, #2d3a3aff 100%);
+    background-color: var(--color-background);
 }
 
-.transition-bottom {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(360deg, #040f0fff 0%, #2d3a3aff 100%);
+.about {
+    background-color: var(--color-background);
 }
 
-.svg {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding-top: 5em;
-  }
-  
+.experience {
+    background-color: var(--color-surface);
+}
+
+.projects {
+    background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-soft) 100%);
+}
+
+.stack {
+    background: linear-gradient(180deg, var(--color-background-soft) 0%, var(--color-background) 100%);
+}
+
+.contact {
+    background-color: var(--color-surface);
+}

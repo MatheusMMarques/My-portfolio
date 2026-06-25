@@ -1,56 +1,60 @@
 import "../css/Skills.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faNodeJs, faJs, faPython, faJava, faBootstrap } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 
-const skillsData = [
-  { id: 'react', icon: faReact, name: 'ReactJs', width: '70%' },
-  { id: 'node', icon: faNodeJs, name: 'NodeJs', width: '60%' },
-  { id: 'javascript', icon: faJs, name: 'JavaScript', width: '65%' },
-  { id: 'python', icon: faPython, name: 'Python', width: '30%' },
-  { id: 'java', icon: faJava, name: 'Java', width: '15%' },
-  { id: 'bootstrap', icon: faBootstrap, name: 'Bootstrap', width: '50%' },
-  { id: 'sql', icon: faDatabase, name: 'SQL', width: '40%' },
+const stackGroups = [
+  {
+    title: "Backend e regras de negócio",
+    description: "Atuação em serviços, endpoints, regras de negócio, integrações e manutenção evolutiva.",
+    tags: ["PHP", "Symfony", "APIs REST", "Webhooks", "Python", "SQL"],
+  },
+  {
+    title: "Front-end e interfaces",
+    description: "Construção e ajuste de interfaces, templates, componentes, fluxos de tela, comportamento dinâmico e experiência do usuário.",
+    tags: ["JavaScript", "jQuery", "HTML", "CSS", "AJAX", "Bootstrap", "Twig", "Vue.js"],
+  },
+  {
+    title: "Dados, busca e investigação",
+    description: "Consultas, leitura de logs, análise de inconsistências e apoio na identificação de causa-raiz.",
+    tags: ["MySQL", "Elasticsearch", "SQL", "Logs", "Dados operacionais"],
+  },
+  {
+    title: "Infra, ambiente e entrega",
+    description: "Uso de ferramentas de desenvolvimento, versionamento, ambiente local, rastreabilidade e apoio em melhorias de performance.",
+    tags: ["Docker", "AWS S3", "CloudFront", "Edge Cache", "Git", "Bitbucket", "Jira"],
+  },
+  {
+    title: "Qualidade e resolução de problemas",
+    description: "Transformação de cenários confusos em testes reproduzíveis, hipóteses técnicas e correções aplicáveis.",
+    tags: ["Troubleshooting", "Causa-raiz", "Reprodução de cenários", "Validação", "Regressão"],
+  },
+  {
+    title: "Aprendizado contínuo",
+    description: "Aprofundamento em tecnologias que ampliam meu repertório e ajudam a responder melhor ao contexto do produto.",
+    tags: ["Laravel", "React", "Angular", "Python", "Novas stacks"],
+  },
 ];
 
 const Skills = () => {
-  const [progressWidth, setProgressWidth] = useState('0%');
-  const [currentSkill, setCurrentSkill] = useState('');
-
   return (
     <section className="skills-container">
-      <div className='box-container'>
-        <div className="skills-content">
-          <h2>HARD SKILLS</h2>
-        </div>
-        <div className='icons-habillity'>
-          <div className="icons">
-            {skillsData.map((skill) => (
-              <FontAwesomeIcon 
-                key={skill.id}
-                className="icon-h" 
-                id={skill.id} 
-                icon={skill.icon} 
-                style={{ color: skill.color }} 
-                onMouseEnter={() => {
-                  setProgressWidth(skill.width);
-                  setCurrentSkill(skill.name);
-                }}
-                onMouseLeave={() => {
-                  setProgressWidth('0%');
-                  setCurrentSkill('');
-                }}
-              />
-            ))}
-          </div>
-          <div className="progress-container">
-            <div className="progress-bar" style={{ width: progressWidth }}></div>
-          </div>
-          <div className={`skill-name ${currentSkill ? 'active' : ''}`}>
-            {currentSkill && `NIVEL: ${currentSkill}`}
-          </div>
-        </div>
+      <div className="skills-content">
+        <h2>STACK E CAPACIDADES</h2>
+        <p>
+          Tecnologias, ferramentas e práticas que uso para desenvolver, analisar e evoluir aplicações.
+        </p>
+      </div>
+
+      <div className="stack-grid">
+        {stackGroups.map((group) => (
+          <article className="stack-card" key={group.title}>
+            <h3>{group.title}</h3>
+            <p>{group.description}</p>
+            <div className="stack-tags">
+              {group.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

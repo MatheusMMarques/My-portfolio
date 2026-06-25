@@ -2,5 +2,13 @@
   --rich-black: #040f0fff;
   --mint-cream: #f7fff7;
   --gunmetal: #2d3a3aff;
-  }
+  --color-background: #040f0fff;
+  --color-background-soft: #0b1919;
+  --color-surface: #172323;
+  --color-surface-muted: #2d3a3aff;
+  --color-card: rgba(4, 15, 15, 0.78);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(224, 236, 236, 0.78);
+}
  

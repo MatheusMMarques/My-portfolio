@@ -1,0 +1,122 @@
+# Spec 02 — Reposicionamento da Hero
+
+## Contexto
+
+Este projeto é um portfólio React com Create React App.
+
+A seção inicial está em `src/pages/About.js` e representa a primeira dobra do site. Atualmente ela está desatualizada e comunica uma imagem antiga: desenvolvedor front-end iniciante, 19 anos, buscando primeira oportunidade.
+
+O novo posicionamento do portfólio é apresentar Matheus como um desenvolvedor full stack adaptável, autônomo, com alta capacidade de aprendizado e experiência real resolvendo problemas em sistemas de produção.
+
+A experiência profissional atual deve aparecer como prova de maturidade prática, mas não como identidade principal. Não posicionar Matheus como “dev PHP/Symfony legado”, “suporte N2” ou “funcionário da Flexy”.
+
+## Objetivo
+
+Atualizar apenas a primeira dobra/hero para comunicar:
+
+* desenvolvedor full stack;
+* autonomia;
+* aprendizado rápido;
+* capacidade de atuar em bases de código desconhecidas;
+* investigação e resolução de problemas reais;
+* experiência prática em sistemas de produção;
+* abertura para aprender novas stacks conforme o contexto do projeto.
+
+## Escopo permitido
+
+Você pode alterar apenas:
+
+* `src/pages/About.js`
+* `src/css/About.css`
+
+Não altere outros arquivos nesta spec.
+
+## Alterações esperadas
+
+### 1. Corrigir texto principal da hero
+
+Trocar o posicionamento antigo:
+
+* “DESENVOLVEDOR FRONT-END”
+* “TENHO 19 ANOS...”
+* “PRIMEIRA OPORTUNIDADE”
+* “ESTUDO FRONT-END...”
+
+Por uma mensagem profissional atual.
+
+Sugestão de direção para o título:
+
+* Linha 1: `DESENVOLVEDOR`
+* Linha 2: `FULL STACK`
+
+Não usar idade.
+
+Não usar “primeira oportunidade”.
+
+Não usar “estudante de front-end”.
+
+### 2. Subtítulo
+
+Criar um subtítulo curto, profissional e direto. Ele deve transmitir a ideia abaixo, mas pode ajustar a redação para caber melhor no layout:
+
+“Desenvolvedor com experiência real em sistemas de produção, resolução de problemas complexos, integrações e evolução de aplicações web. Aprendo rápido, me adapto ao contexto do projeto e transformo problemas confusos em soluções entregáveis.”
+
+Evite tom exagerado, genérico ou artificial.
+
+### 3. Links
+
+Manter os links atuais para:
+
+* LinkedIn
+* GitHub
+* PDF/CV
+
+Adicionar `target="_blank"` e `rel="noreferrer"` nos links externos, se ainda não existir.
+
+Não trocar URLs agora.
+
+### 4. Encoding
+
+Corrigir qualquer caractere quebrado visível, por exemplo o emoji quebrado em “OI, ME CHAMO MATHEUS”.
+
+Pode usar `👋` normalmente ou remover o emoji se houver risco de encoding.
+
+### 5. CSS
+
+Ajustar `src/css/About.css` apenas se necessário para o novo subtítulo não ficar espremido.
+
+Diretrizes:
+
+* manter a identidade visual atual por enquanto;
+* não redesenhar a seção inteira;
+* não trocar paleta de cores;
+* não refatorar responsividade completa;
+* apenas melhorar legibilidade do subtítulo se necessário.
+
+## Restrições
+
+* Não alterar dependências.
+* Não rodar `npm audit fix`.
+* Não alterar Navbar.
+* Não alterar Skills.
+* Não alterar Projects.
+* Não alterar Contact.
+* Não criar novos componentes.
+* Não fazer redesign completo.
+* Não alterar arquivos fora do escopo permitido.
+* Não remover os ícones sociais.
+
+## Validação
+
+Após alterar, rode:
+
+`npm start`
+
+ou, se o servidor já estiver rodando, apenas confirme que o projeto recompila sem erro.
+
+Ao final, responda com:
+
+* Arquivos alterados.
+* Resumo do que foi alterado.
+* Como validar visualmente no navegador.
+* Qualquer risco ou ponto de atenção.
