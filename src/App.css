@@ -84,11 +84,6 @@ body {
     margin: 0 0 44px;
 }
 
-.section-header.centered {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .section-eyebrow,
 .tag,
 .pill-link {
@@ -191,6 +186,14 @@ body {
 
     .section-header {
         margin-bottom: 34px;
+    }
+
+    .section-header h2 {
+        max-width: 100%;
+        font-size: clamp(1.95rem, 10vw, 2.55rem);
+        line-height: 1.08;
+        letter-spacing: 0.04rem;
+        overflow-wrap: anywhere;
     }
 
     .portfolio-card {

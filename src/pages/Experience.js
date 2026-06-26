@@ -3,23 +3,23 @@ import "../css/Experience.css";
 const experienceItems = [
   {
     title: "Ambientes reais",
-    text: "Atuação com cuidado sobre impacto, clareza na entrega e atenção ao comportamento esperado da aplicação.",
+    text: "Validação de cenários em aplicações em produção, considerando impacto, regressões e comportamento esperado pelo usuário.",
   },
   {
     title: "Análise de causa",
-    text: "Leitura de cenários, reprodução de comportamentos, uso de logs e comparação entre o esperado e o que acontece na prática.",
+    text: "Investigação de comportamentos inconsistentes por meio de reprodução de cenário, leitura de logs e comparação entre esperado e realizado.",
   },
   {
     title: "Full stack na prática",
-    text: "Correções e melhorias envolvendo interface, regras de negócio, banco de dados, APIs, integrações e fluxos de uso.",
+    text: "Correções e melhorias envolvendo interface, regras de negócio, banco de dados, integrações e fluxos de uso.",
   },
   {
     title: "Adaptação técnica",
-    text: "Entrada em código desconhecido, leitura dos padrões existentes e aprendizado da tecnologia necessária para avançar com segurança.",
+    text: "Entrada em bases existentes, leitura de padrões do projeto e aprendizado da tecnologia necessária para avançar com segurança.",
   },
   {
     title: "Comunicação e contexto",
-    text: "Organização de evidências, hipóteses, solução aplicada e próximos passos em uma explicação clara para diferentes contextos.",
+    text: "Organização de evidências, hipóteses, solução aplicada e próximos passos em uma explicação clara para diferentes públicos.",
   },
 ];
 

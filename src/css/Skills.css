@@ -9,7 +9,7 @@
 .skills-content {
     width: 100%;
     max-width: var(--container-md);
-    margin: 0 auto 44px;
+    margin: 0 0 44px;
     text-align: left;
 }
 
@@ -36,8 +36,6 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--grid-gap);
     width: 100%;
-    max-width: var(--container-xl);
-    margin: 0 auto;
 }
 
 .stack-card {

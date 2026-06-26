@@ -2,51 +2,58 @@ import "../css/Skills.css";
 
 const stackGroups = [
   {
-    title: "Backend e regras de negócio",
-    category: "Base de produto",
-    description: "Atuação em serviços, endpoints, regras de negócio, integrações e manutenção evolutiva.",
-    tags: ["PHP", "Symfony", "APIs REST", "Webhooks", "Python", "SQL"],
+    title: "Backend e produto",
+    category: "Base da aplicação",
+    description: "Atuação em regras de negócio, manutenção evolutiva, APIs e integrações conectadas ao comportamento do produto.",
+    tags: ["PHP", "Symfony", "APIs REST", "Integrações", "Regras de negócio", "E-commerce"],
   },
   {
-    title: "Front-end e interfaces",
+    title: "Frontend e interface",
     category: "Experiência de uso",
-    description: "Construção e ajuste de interfaces, templates, componentes, fluxos de tela, comportamento dinâmico e experiência do usuário.",
-    tags: ["JavaScript", "jQuery", "HTML", "CSS", "AJAX", "Bootstrap", "Twig", "Vue.js"],
+    description: "Construção e ajuste de telas, templates e interações para melhorar fluxos de uso e clareza da interface.",
+    tags: ["JavaScript", "React", "Twig", "HTML", "CSS", "AJAX", "jQuery"],
   },
   {
-    title: "Dados, busca e investigação",
+    title: "Dados e diagnóstico",
     category: "Diagnóstico",
-    description: "Consultas, leitura de logs, análise de inconsistências e apoio na identificação de causa-raiz.",
-    tags: ["MySQL", "Elasticsearch", "SQL", "Logs", "Dados operacionais"],
+    description: "Consultas, análise de comportamento, leitura de logs e investigação de inconsistências para chegar à causa provável.",
+    tags: ["SQL", "MySQL", "Logs", "Debug", "Causa-raiz", "Dados operacionais"],
   },
   {
-    title: "Infra, ambiente e entrega",
-    category: "Operação",
-    description: "Uso de ferramentas de desenvolvimento, versionamento, ambiente local, rastreabilidade e apoio em melhorias de performance.",
-    tags: ["Docker", "AWS S3", "CloudFront", "Edge Cache", "Git", "Bitbucket", "Jira"],
+    title: "Ambiente e entrega",
+    category: "Fluxo de trabalho",
+    description: "Uso de ambiente local, versionamento e validação para entregar ajustes com rastreabilidade e menor risco.",
+    tags: ["Docker", "Git", "Bitbucket", "Validação", "Deploy", "Rastreabilidade"],
   },
   {
-    title: "Qualidade e resolução de problemas",
-    category: "Confiabilidade",
-    description: "Transformação de cenários confusos em testes reproduzíveis, hipóteses técnicas e correções aplicáveis.",
-    tags: ["Troubleshooting", "Causa-raiz", "Reprodução de cenários", "Validação", "Regressão"],
+    title: "Manutenção e evolução",
+    category: "Sistemas existentes",
+    description: "Leitura de sistemas existentes, reprodução de cenários, correções pontuais e cuidado com regressões.",
+    tags: ["Manutenção", "Troubleshooting", "Regressão", "Performance", "Sistemas existentes"],
   },
   {
-    title: "Aprendizado contínuo",
-    category: "Evolução",
+    title: "Documentação e rastreabilidade",
+    category: "Base de apoio",
+    description: "Registro de decisões, fluxos, ambientes, validações e instruções para facilitar manutenção, testes e continuidade do trabalho.",
+    tags: ["Confluence", "Jira", "Documentação", "Sandbox", "Evidências", "Processos"],
+  },
+  {
+    title: "Adaptação de stack",
+    category: "Evolução técnica",
     featured: true,
-    description: "Aprofundamento em tecnologias que ampliam meu repertório e ajudam a responder melhor ao contexto do produto.",
-    tags: ["Laravel", "React", "Angular", "Python", "Novas stacks"],
+    description: "Aprendizado conforme o contexto do projeto, priorizando entender padrões existentes antes de propor mudanças.",
+    tags: ["Novas stacks", "Leitura de código", "Contexto do produto", "Padrões existentes", "Aprendizado guiado"],
   },
 ];
 
 const Skills = () => {
   return (
     <section className="skills-container section-container">
-      <div className="skills-content section-header centered">
+      <div className="section-inner">
+      <div className="skills-content section-header">
         <h2>STACK E CAPACIDADES</h2>
         <p>
-          Tecnologias, ferramentas e práticas que uso para desenvolver, analisar e evoluir aplicações.
+          Tecnologias, ferramentas e práticas que uso para desenvolver, investigar e evoluir aplicações em contexto real.
         </p>
       </div>
 
@@ -65,6 +72,7 @@ const Skills = () => {
             </div>
           </article>
         ))}
+      </div>
       </div>
     </section>
   );

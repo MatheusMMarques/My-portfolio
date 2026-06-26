@@ -9,7 +9,7 @@
 .projects-heading {
     width: 100%;
     max-width: var(--container-md);
-    margin: 0 auto 52px;
+    margin: 0 0 52px;
 }
 
 .projects-heading h2 {
@@ -34,13 +34,15 @@
     display: grid;
     gap: 64px;
     width: 100%;
-    max-width: var(--container-xl);
-    margin: 0 auto;
 }
 
 .projects-block {
     display: grid;
     gap: 24px;
+}
+
+.projects-block-secondary {
+    gap: 22px;
 }
 
 .projects-block-header {
@@ -85,6 +87,7 @@
 
 .projects-grid-cases {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
 }
 
 .projects-grid-personal {
@@ -133,8 +136,24 @@
     min-height: 100%;
 }
 
+.project-card-case .project-summary {
+    font-size: 0.96rem;
+}
+
 .project-card-case .project-details {
     border-bottom: 0;
+}
+
+.project-card-case .project-section {
+    padding: 12px 0;
+}
+
+.project-card-case .project-section dd {
+    font-size: 0.92rem;
+}
+
+.project-section-note dd {
+    color: var(--text-muted);
 }
 
 .project-card-personal.project-card-textual {
@@ -310,6 +329,7 @@
     .projects-grid-personal {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
 }
 
 @media (max-width: 620px) {

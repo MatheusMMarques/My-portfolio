@@ -1,25 +1,80 @@
 import '../css/Projects.css'
 import Surfland from '../images/Surfland.png'
 import MovieCatalog from '../images/MovieCatalog.png';
+import Portfolio from '../images/Portfolio.png';
 
 const practicalCases = [
   {
+    type: 'Freelance',
+    title: 'Funcionalidade de kits em fluxo de compra',
+    context: 'Entrega freelance em uma operação real, envolvendo a adaptação de um fluxo para venda de produtos compostos por subitens e opções configuráveis.',
+    solution: 'Atuei na adaptação do fluxo desde a página do produto até etapas posteriores da compra, conectando experiência do usuário, carrinho/checkout, pós-compra e visualização administrativa do pedido.',
+    result: 'A solução ajudou a tornar o fluxo de venda mais claro e rastreável, preservando os dados necessários para o usuário e para a operação interna.',
+    tags: ['Freelance', 'Sistema existente', 'Fluxo complexo', 'Regras de negócio', 'Frontend', 'Backend', 'Adaptação'],
+    linkLabel: 'Case freelance',
+  },
+  {
     type: 'Case prático anonimizado',
-    title: 'Melhoria de performance com cache',
-    context: 'Páginas cacheadas precisavam carregar melhor sem misturar informações dinâmicas da aplicação.',
-    solution: 'Apoio em melhorias de Edge Cache, separando conteúdo cacheável de dados de contexto e observando o comportamento em navegação real.',
-    result: 'Contribuiu para melhorar a experiência de carregamento e reforçou aprendizado prático sobre cache, invalidação e front-end dinâmico.',
-    tags: ['JavaScript', 'AWS CloudFront', 'Edge Cache', 'Performance', 'Front-end'],
+    title: 'Estado de sessão em interface cacheada',
+    context: 'Correção de inconsistências visuais em uma interface que exibia login, carrinho e perfil de forma diferente do estado real do usuário. A aplicação usava cache em partes da interface para melhorar performance, mas alguns elementos do topo podiam carregar informações antigas em fluxos de visitante, usuário logado e perfis diferentes.',
+    solution: 'Investiguei cenários de navegação, login, troca de usuário e atualização de página. A análise separou conteúdo seguro para cache do que dependia da sessão atual, com validação em desktop, mobile e navegação anônima.',
+    result: 'A interface passou a refletir corretamente o estado real do usuário, reduzindo inconsistências no menu, no carrinho e nos links de conta sem sacrificar performance.',
+    tags: ['Frontend', 'Cache', 'Sessão', 'E-commerce', 'Debug', 'UX'],
     linkLabel: 'Case anonimizado',
   },
   {
     type: 'Case prático anonimizado',
-    title: 'Investigação ponta a ponta de falhas',
-    context: 'Comportamentos inconsistentes em fluxos reais exigiam reprodução de cenário e análise antes de qualquer correção.',
-    solution: 'Mapeamento do fluxo, comparação entre comportamento esperado e atual, análise de dados e identificação de causa-raiz.',
-    result: 'Relatos pouco claros viraram evidências técnicas, hipóteses testáveis e correções mais bem direcionadas.',
-    tags: ['Logs', 'SQL', 'Debug', 'Causa-raiz', 'Análise'],
+    title: 'Diagnóstico fiscal em fluxo de checkout',
+    context: 'Investigação e validação de um fluxo fiscal sensível dentro do checkout, envolvendo exibição de impostos, totalização do pedido e formas de pagamento. O cenário incluía variações de endereço, regras comerciais, entrega, pagamento e atualização dos totais.',
+    solution: 'Reproduzi o fluxo completo de compra em ambiente controlado, validando produto, endereço, entrega, pagamento e totalização. Também comparei cenários para separar regra esperada de possíveis falhas reais no fluxo.',
+    result: 'O comportamento fiscal foi validado com mais clareza e os pontos de inconsistência foram isolados, direcionando a análise para o ponto correto.',
+    tags: ['Checkout', 'Regras de negócio', 'Fiscal', 'Debug', 'Validação', 'E-commerce'],
     linkLabel: 'Case anonimizado',
+  },
+  {
+    type: 'Case prático anonimizado',
+    title: 'Divergência de frete em integração externa',
+    context: 'Investigação de divergência em valores de frete envolvendo integração com serviço externo, origem, destino e configuração da loja. A reprodução dependia de produto específico, origem de envio, CEP de destino, transportadora e credenciais válidas.',
+    solution: 'Mapeei o fluxo de cotação ponta a ponta, identificando quais dados influenciavam o cálculo e quais informações precisavam bater entre loja e serviço externo. Também diferenciei evidência de bug real de divergência sem prova técnica.',
+    result: 'A investigação deixou claro quais fatores poderiam alterar o valor final do frete e quais evidências seriam necessárias para confirmar uma falha.',
+    tags: ['Integração', 'Frete', 'API', 'Investigação', 'Logs', 'E-commerce'],
+    linkLabel: 'Case anonimizado',
+  },
+  {
+    type: 'Case prático anonimizado',
+    title: 'Visibilidade de recurso em painel administrativo',
+    context: 'Correção de um problema em que usuários com perfis diferentes tinham acesso visual diferente a um mesmo recurso administrativo. O recurso existia, mas a listagem variava conforme o contexto associado ao usuário.',
+    solution: 'Comparei usuários, vínculos, escopos e permissões aplicadas. A investigação mostrou que a diferença estava relacionada ao contexto do usuário, fazendo o painel listar apenas parte dos dados disponíveis.',
+    result: 'O recurso passou a ser exibido corretamente para o usuário esperado, respeitando o escopo de acesso e facilitando a explicação para áreas não técnicas.',
+    tags: ['Admin', 'Permissões', 'Escopo', 'Diagnóstico', 'Dados', 'Produto'],
+    linkLabel: 'Case anonimizado',
+  },
+  {
+    type: 'Case prático anonimizado',
+    title: 'Produto sem estoque com ação incorreta na listagem',
+    context: 'Ajuste de comportamento em cards de produto para evitar que itens indisponíveis exibissem uma chamada de ação incompatível com o estoque. A listagem incentivava interação com produtos que não poderiam ser comprados naquele momento.',
+    solution: 'Analisei as condições que determinavam se uma variação estava disponível para compra, considerando estoque, disponibilidade comercial e comportamento esperado da vitrine. O ajuste manteve a navegação para o produto quando isso ainda fazia sentido.',
+    result: 'Os cards passaram a comunicar melhor a indisponibilidade, evitando expectativa incorreta de compra e mantendo uma alternativa de interação adequada.',
+    tags: ['Frontend', 'Catálogo', 'UX', 'Estoque', 'Regras de exibição', 'E-commerce'],
+    linkLabel: 'Case anonimizado',
+  },
+  {
+    type: 'Case prático anonimizado',
+    title: 'Busca com comportamento diferente entre ambientes',
+    context: 'Investigação de erro em busca de produtos que ocorria em produção, mas não era reproduzido da mesma forma em ambiente local. O problema podia envolver código da tela, dados, índice de busca, cache ou diferenças entre ambientes.',
+    solution: 'Testei os mesmos termos em ambiente local, validei rotas envolvidas e comparei o comportamento esperado com o que ocorria em produção. A análise ajudou a separar hipóteses de frontend, backend, dados e indexação.',
+    result: 'Mesmo sem reprodução direta em local, a investigação reduziu o campo de possibilidades e apontou caminhos técnicos mais prováveis para correção.',
+    tags: ['Busca', 'Diagnóstico', 'Ambientes', 'Dados', 'Indexação', 'Debug'],
+    linkLabel: 'Case anonimizado',
+  },
+  {
+    type: 'Freelance',
+    title: 'SEO técnico para múltiplas lojas',
+    context: 'Implementação de melhorias técnicas de SEO em duas lojas do mesmo grupo, seguindo recomendações de indexação, estrutura de página e validação no Google Search Console.',
+    solution: 'Apliquei ajustes como canonical, robots, noindex/nofollow em páginas específicas, breadcrumbs, dados estruturados e refatoração completa do sitemap para as duas lojas.',
+    result: 'As melhorias foram implementadas nas duas operações e validadas diretamente no Google Search Console, conectando ajustes técnicos da aplicação com leitura externa pelos mecanismos de busca.',
+    tags: ['Freelance', 'SEO técnico', 'Google Search Console', 'Sitemap', 'Dados estruturados', 'Indexação', 'Web'],
+    linkLabel: 'Case freelance',
   },
 ];
 
@@ -31,25 +86,26 @@ const personalProjects = [
     solution: 'Reestruturação da narrativa, criação de seções de experiência, stack por capacidades e reposicionamento para um perfil mais completo.',
     result: 'Projeto usado como registro prático de evolução técnica, posicionamento profissional e construção de interface com React.',
     tags: ['React', 'JavaScript', 'CSS', 'UI', 'Portfólio'],
-    linkLabel: 'Sem link público',
+    linkLabel: 'Você está nele!',
+    image: Portfolio,
   },
   {
-    type: 'Projeto de estudo aplicado',
+    type: 'Projeto inicial',
     title: 'Catálogo de filmes',
-    context: 'Projeto criado para praticar consumo de dados, listagem, busca e organização visual de cards.',
+    context: 'Projeto criado no início da minha jornada para praticar consumo de dados, listagem, busca e organização visual de cards.',
     solution: 'Interface de catálogo com listagem de filmes, busca e apresentação responsiva.',
-    result: 'Prática de componentes, estado, renderização de listas e organização de interface.',
+    result: 'Mantido como registro de evolução técnica e visual em componentes, estado, renderização de listas e organização de interface.',
     tags: ['React', 'JavaScript', 'CSS', 'API', 'Responsivo'],
     link: 'https://catalogmovies.vercel.app',
     linkLabel: 'Ver projeto',
     image: MovieCatalog,
   },
   {
-    type: 'Projeto de estudo aplicado',
+    type: 'Projeto inicial',
     title: 'Site de informações de surf',
-    context: 'Projeto criado para praticar construção de landing page responsiva e organização visual de conteúdo.',
+    context: 'Projeto desenvolvido no início da minha jornada para praticar construção de landing page responsiva e organização visual de conteúdo.',
     solution: 'Página informativa com foco em layout, responsividade e apresentação em diferentes tamanhos de tela.',
-    result: 'Primeira base prática em HTML, CSS, responsividade e composição visual.',
+    result: 'Mantido como registro de evolução em HTML, CSS, responsividade e composição visual.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsivo', 'UI'],
     link: 'https://surfland-project.vercel.app',
     linkLabel: 'Ver projeto',
@@ -61,7 +117,7 @@ const ProjectCard = ({ project, variant = 'project' }) => (
   <article className={`project-card portfolio-card project-card-${variant} ${project.image ? 'project-card-with-image' : 'project-card-textual'}`}>
     {project.image && (
       <div className="project-image">
-        <img src={project.image} alt="" />
+        <img src={project.image} alt={project.imageAlt || ""} />
       </div>
     )}
 
@@ -73,14 +129,21 @@ const ProjectCard = ({ project, variant = 'project' }) => (
 
     <dl className="project-details">
       <div className="project-section">
-        <dt>Solução</dt>
+        <dt>{variant === 'case' ? 'Atuação' : 'Solução'}</dt>
         <dd>{project.solution}</dd>
       </div>
 
       <div className="project-section">
-        <dt>Resultado/aprendizado</dt>
+        <dt>{variant === 'case' ? 'Resultado' : 'Resultado/aprendizado'}</dt>
         <dd>{project.result}</dd>
       </div>
+
+      {project.note && (
+        <div className="project-section project-section-note">
+          <dt>Observação</dt>
+          <dd>{project.note}</dd>
+        </div>
+      )}
     </dl>
 
     <footer className="project-footer">
@@ -104,7 +167,8 @@ const ProjectCard = ({ project, variant = 'project' }) => (
 const Projects = () => {
   return (
     <section className='project-container section-container'>
-      <div className="projects-heading section-header centered">
+      <div className="section-inner">
+      <div className="projects-heading section-header">
         <h2>CASES E PROJETOS</h2>
         <p>
           Projetos e cases que mostram raciocínio técnico, solução aplicada e evolução ao longo da prática.
@@ -128,9 +192,9 @@ const Projects = () => {
           </div>
         </section>
 
-        <section className="projects-block">
+        <section className="projects-block projects-block-secondary">
           <div className="projects-block-header">
-            <h3>PROJETOS PESSOAIS</h3>
+            <h3>PROJETOS PESSOAIS E ESTUDOS</h3>
             <p>Projetos públicos ou próprios usados para praticar construção, interface, organização de código e evolução técnica.</p>
           </div>
 
@@ -140,6 +204,7 @@ const Projects = () => {
             ))}
           </div>
         </section>
+      </div>
       </div>
     </section>
   )
