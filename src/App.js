@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import ScrollReveal from 'scrollreveal';
+import React from 'react';
 
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -11,20 +10,6 @@ import Contact from './pages/Contact';
 import './App.css';
 
 const App = () => {
-  useEffect(() => {
-    const sr = ScrollReveal({
-      origin: 'top',
-      distance: '80px',
-      duration: 2000,
-      reset: true
-    });
-
-    sr.reveal('.about', { delay: 200 });
-    sr.reveal('.experience', { delay: 200 });
-    sr.reveal('.projects', { delay: 200 });
-    sr.reveal('.stack', { delay: 200 });
-  }, []);
-
   return (
     <div className="App">
       <Navbar />

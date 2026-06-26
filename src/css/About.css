@@ -1,202 +1,170 @@
-.text {
-    text-align: left;
-    color: #fff;
-    width: 100%;
-    margin-bottom: 7rem;
-}
-
-.h2-content {
-    font-size: 10em;
-    line-height: 1em;
-    margin-bottom: 1.5rem;
-}
-
-.minor-text {
-    font-size: 2rem;
-    display: block;
-    line-height: normal;
-    font-family: "Kanit", sans-serif;
-    color: rgba(162, 179, 179, 0.596);
-}
-
-.major-text {
-    font-family: "Anton", sans-serif;
-    letter-spacing: 0.3rem;
-}
-
 .about-container {
     width: 100%;
+    min-height: calc(100vh - 68px);
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle, rgb(46 65 65 / 80%) 0%, rgba(4, 15, 15, 0.9) 50%, rgba(4, 15, 15, 1) 100%);
-    padding: 50px 20px;
+    padding: 96px 24px 104px;
+    background: transparent;
+    color: var(--text-primary);
     box-sizing: border-box;
 }
 
-.icon-container {
-    display: flex;
+.about-shell {
+    width: 100%;
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+}
+
+.hero-copy {
+    max-width: 920px;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
     align-items: center;
+    width: fit-content;
+    min-height: 30px;
+    margin-bottom: 18px;
+    padding: 7px 11px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.08rem;
 }
 
-.icon-container .icon {
-    padding: 10px;
-    width: 70px;
-    height: 70px;
-    margin-left: 10px;
-    cursor: pointer;
+.hero-title {
+    display: grid;
+    gap: 4px;
+    max-width: 860px;
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(4.2rem, 8vw, 7.4rem);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: 0.08rem;
 }
 
-.icon-container .icon:hover {
-    animation: bounce 1s linear;
+.hero-title span {
+    display: block;
 }
 
-@keyframes bounce {
-
-    20%,
-    50%,
-    80%,
-    to {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-30px);
-    }
-
-    70% {
-        transform: translateY(-15px);
-    }
-
-    90% {
-        transform: translateY(-4px);
-    }
+.hero-title span:last-child {
+    color: rgba(247, 251, 251, 0.84);
 }
 
 .about-me {
-    font-family: "Kanit", sans-serif;
-    line-height: 1.5;
-    font-size: 1.22rem;
-    color: rgba(224, 236, 236, 0.82);
-    max-width: 820px;
-    margin: 1.25rem 0 0 auto;
-    padding-bottom: 0;
-    text-align: right;
+    max-width: 760px;
+    margin: 28px 0 0;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.7vw, 1.18rem);
+    line-height: 1.68;
 }
 
-@media (max-width: 1118px) {
-    .h2-content {
-        font-size: 7em;
-    }
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
 }
 
-@media (max-width: 869px) {
-    .h2-content {
-        font-size: 5em;
-    }
-
-    .icon-container .icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .about-me {
-        font-size: 1rem;
-        max-width: 660px;
-    }
+.hero-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 15px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+        rgba(7, 20, 20, 0.72);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
 }
 
-@media (max-width: 682px) {
+.hero-action:hover {
+    transform: translateY(-2px);
+    border-color: rgba(116, 192, 252, 0.44);
+    background-color: var(--accent-soft);
+}
 
-    .about-container{
-        min-height: 85vh;
-    }
+.hero-action:focus-visible {
+    outline: 2px solid rgba(116, 192, 252, 0.7);
+    outline-offset: 3px;
+}
 
-    .minor-text {
-        font-size: 1rem;
-        line-height: 0px;
-    }
+.hero-action-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--accent);
+}
 
-    .major-text {
-        font-size: 3rem;
-        line-height: 0.95;
-        letter-spacing: 2px;
-    }
-
-    .icon-container .icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    .about-me {
-        font-size: 0.9rem;
-        max-width: 520px;
-        margin-top: 1rem;
-    }
-
-    .about-container{
+@media (max-width: 760px) {
+    .about-container {
+        min-height: auto;
+        align-items: flex-start;
+        padding: 76px 18px 82px;
         background: transparent;
     }
-}
 
-@media (max-width: 495px) {
-    
-    .about-container{
-        min-height: 50vh;
-    }
-    
-    .minor-text {
-        font-size: 0.7rem;
+    .hero-copy {
+        max-width: 100%;
     }
 
-    .major-text {
-        font-size: 2rem;
-        line-height: 0.95;
+    .hero-eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.74rem;
+        letter-spacing: 0.06rem;
     }
 
-    .icon-container .icon {
-        width: 20px;
-        height: 20px;
+    .hero-title {
+        max-width: 100%;
+        font-size: clamp(3.1rem, 16vw, 4.6rem);
+        line-height: 0.94;
+        letter-spacing: 0.04rem;
     }
 
     .about-me {
-        font-size: 0.82rem;
+        margin-top: 24px;
+        line-height: 1.62;
+    }
+
+    .hero-actions {
+        margin-top: 28px;
+    }
+
+    .hero-action {
+        min-height: 46px;
+        padding: 0 14px;
     }
 }
 
-@media (max-width: 414px) {
-    .about-me {
-        font-size: 0.78rem;
+@media (max-width: 420px) {
+    .about-container {
+        padding: 64px 14px 72px;
     }
 
-    .minor-text {
-        font-size: 0.6rem;
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
-    .major-text {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 379px) {
-    
-    .about-container{
-        min-height: 40vh;
-    }
-    
-    .about-me {
-        font-size: 0.72rem;
-    }
-
-    .minor-text {
-        font-size: 0.5rem;
-    }
-
-    .major-text {
-        font-size: 1.2rem;
-    }
-    .icon-container .icon {
-        width: 10px;
-        height: 10px;
+    .hero-action {
+        width: 100%;
     }
 }

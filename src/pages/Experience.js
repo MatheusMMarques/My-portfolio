@@ -23,11 +23,17 @@ const experienceItems = [
   },
 ];
 
+const featuredExperience = experienceItems.find((item) => item.title === "Full stack na prática");
+const supportingExperiences = experienceItems.filter((item) => item.title !== "Full stack na prática");
+const orderedExperienceItems = featuredExperience
+  ? [featuredExperience, ...supportingExperiences]
+  : experienceItems;
+
 const Experience = () => {
   return (
-    <section id="experience" className="page-section experience experience-container">
-      <div className="experience-content">
-        <div className="experience-heading">
+    <section id="experience" className="page-section experience experience-container section-container">
+      <div className="experience-content section-inner">
+        <div className="experience-heading section-header">
           <h2>EXPERIÊNCIA PRÁTICA</h2>
           <p>
             Atuação em diferentes camadas da aplicação, conectando contexto de negócio, código e entrega.
@@ -35,8 +41,14 @@ const Experience = () => {
         </div>
 
         <div className="experience-grid">
-          {experienceItems.map((item) => (
-            <article className="experience-card" key={item.title}>
+          {orderedExperienceItems.map((item, index) => (
+            <article
+              className={`experience-card portfolio-card ${index === 0 ? "experience-card-featured" : ""}`}
+              key={item.title}
+            >
+              <span className="experience-card-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>

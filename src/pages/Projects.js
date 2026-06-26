@@ -2,16 +2,7 @@ import '../css/Projects.css'
 import Surfland from '../images/Surfland.png'
 import MovieCatalog from '../images/MovieCatalog.png';
 
-const projectCases = [
-  {
-    type: 'Projeto pessoal',
-    title: 'Portfólio profissional em React',
-    context: 'Evolução de uma versão antiga do meu portfólio, criada em uma fase inicial da carreira.',
-    solution: 'Reestruturação da narrativa, criação de seções de experiência, stack por capacidades e reposicionamento para um perfil mais completo.',
-    result: 'Projeto usado como registro prático de evolução técnica, posicionamento profissional e construção de interface com React.',
-    tags: ['React', 'JavaScript', 'CSS', 'UI', 'Portfólio'],
-    linkLabel: 'Sem link público',
-  },
+const practicalCases = [
   {
     type: 'Case prático anonimizado',
     title: 'Melhoria de performance com cache',
@@ -29,6 +20,18 @@ const projectCases = [
     result: 'Relatos pouco claros viraram evidências técnicas, hipóteses testáveis e correções mais bem direcionadas.',
     tags: ['Logs', 'SQL', 'Debug', 'Causa-raiz', 'Análise'],
     linkLabel: 'Case anonimizado',
+  },
+];
+
+const personalProjects = [
+  {
+    type: 'Projeto pessoal',
+    title: 'Portfólio profissional em React',
+    context: 'Evolução de uma versão antiga do meu portfólio, criada em uma fase inicial da carreira.',
+    solution: 'Reestruturação da narrativa, criação de seções de experiência, stack por capacidades e reposicionamento para um perfil mais completo.',
+    result: 'Projeto usado como registro prático de evolução técnica, posicionamento profissional e construção de interface com React.',
+    tags: ['React', 'JavaScript', 'CSS', 'UI', 'Portfólio'],
+    linkLabel: 'Sem link público',
   },
   {
     type: 'Projeto de estudo aplicado',
@@ -54,58 +57,89 @@ const projectCases = [
   },
 ];
 
+const ProjectCard = ({ project, variant = 'project' }) => (
+  <article className={`project-card portfolio-card project-card-${variant} ${project.image ? 'project-card-with-image' : 'project-card-textual'}`}>
+    {project.image && (
+      <div className="project-image">
+        <img src={project.image} alt="" />
+      </div>
+    )}
+
+    <div className="project-main">
+      <span className="project-type tag">{project.type}</span>
+      <h3>{project.title}</h3>
+      <p className="project-summary">{project.context}</p>
+    </div>
+
+    <dl className="project-details">
+      <div className="project-section">
+        <dt>Solução</dt>
+        <dd>{project.solution}</dd>
+      </div>
+
+      <div className="project-section">
+        <dt>Resultado/aprendizado</dt>
+        <dd>{project.result}</dd>
+      </div>
+    </dl>
+
+    <footer className="project-footer">
+      <div className="project-tags tag-list">
+        {project.tags.map((tag) => (
+          <span className="tag" key={tag}>{tag}</span>
+        ))}
+      </div>
+
+      {project.link ? (
+        <a className="project-link project-link-action" href={project.link} target="_blank" rel="noopener noreferrer">
+          {project.linkLabel}
+        </a>
+      ) : (
+        <span className="project-link project-link-muted">{project.linkLabel}</span>
+      )}
+    </footer>
+  </article>
+);
+
 const Projects = () => {
   return (
-    <section className='project-container'>
-      <div className="projects-heading">
+    <section className='project-container section-container'>
+      <div className="projects-heading section-header centered">
         <h2>CASES E PROJETOS</h2>
         <p>
           Projetos e cases que mostram raciocínio técnico, solução aplicada e evolução ao longo da prática.
         </p>
       </div>
 
-      <div className="projects-grid">
-        {projectCases.map((project) => (
-          <article className="project-card" key={project.title}>
-            {project.image && (
-              <div className="project-image">
-                <img src={project.image} alt="" />
-              </div>
-            )}
+      <div className="projects-blocks">
+        <section className="projects-block">
+          <div className="projects-block-header">
+            <h3>CASES PRÁTICOS</h3>
+            <p>Experiências reais, anonimizadas, com foco em contexto, decisão técnica e aprendizado aplicado.</p>
+            <p className="projects-anonymization-note">
+              Os cases práticos são descritos de forma anonimizada para preservar dados de clientes, regras internas e código proprietário. O foco é apresentar o raciocínio técnico, o tipo de problema enfrentado e a forma de condução da solução.
+            </p>
+          </div>
 
-            <span className="project-type">{project.type}</span>
-            <h3>{project.title}</h3>
+          <div className="projects-grid projects-grid-cases">
+            {practicalCases.map((project) => (
+              <ProjectCard project={project} variant="case" key={project.title} />
+            ))}
+          </div>
+        </section>
 
-            <div className="project-section">
-              <h4>Contexto</h4>
-              <p>{project.context}</p>
-            </div>
+        <section className="projects-block">
+          <div className="projects-block-header">
+            <h3>PROJETOS PESSOAIS</h3>
+            <p>Projetos públicos ou próprios usados para praticar construção, interface, organização de código e evolução técnica.</p>
+          </div>
 
-            <div className="project-section">
-              <h4>Solução</h4>
-              <p>{project.solution}</p>
-            </div>
-
-            <div className="project-section">
-              <h4>Resultado/aprendizado</h4>
-              <p>{project.result}</p>
-            </div>
-
-            <div className="project-tags">
-              {project.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
-
-            {project.link ? (
-              <a className="project-link" href={project.link} target="_blank" rel="noopener noreferrer">
-                {project.linkLabel}
-              </a>
-            ) : (
-              <span className="project-link project-link-muted">{project.linkLabel}</span>
-            )}
-          </article>
-        ))}
+          <div className="projects-grid projects-grid-personal">
+            {personalProjects.map((project) => (
+              <ProjectCard project={project} variant="personal" key={project.title} />
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   )

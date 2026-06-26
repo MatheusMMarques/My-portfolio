@@ -8,45 +8,192 @@
 }
 
 html {
-    background-color: var(--color-background);
+    background-color: var(--bg-page);
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-background);
+    background-color: var(--bg-page);
     color: var(--color-text);
+}
+
+#root {
+    min-height: 100vh;
+    background-color: var(--bg-page);
 }
 
 .App {
     min-height: 100vh;
     background:
-        radial-gradient(circle at 50% 0%, rgba(45, 58, 58, 0.36), transparent 34rem),
-        var(--color-background);
+        radial-gradient(circle at 50% 6%, rgba(116, 192, 252, 0.09), transparent 32rem),
+        radial-gradient(circle at 14% 34%, rgba(45, 68, 68, 0.32), transparent 36rem),
+        radial-gradient(circle at 86% 62%, rgba(116, 192, 252, 0.055), transparent 32rem),
+        radial-gradient(circle at 24% 88%, rgba(45, 68, 68, 0.24), transparent 34rem),
+        var(--bg-page);
+    background-repeat: no-repeat;
 }
 
 .page-section {
     width: 100%;
-    background-color: var(--color-background);
+    background: transparent;
+    position: relative;
+}
+
+.page-section + .page-section {
+    margin-top: 0;
 }
 
 .about {
-    background-color: var(--color-background);
+    background: transparent;
 }
 
 .experience {
-    background-color: var(--color-surface);
+    background: transparent;
 }
 
 .projects {
-    background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-soft) 100%);
+    background: transparent;
 }
 
 .stack {
-    background: linear-gradient(180deg, var(--color-background-soft) 0%, var(--color-background) 100%);
+    background: transparent;
 }
 
 .contact {
-    background-color: var(--color-surface);
+    background: transparent;
+}
+
+.section-container {
+    width: 100%;
+    padding: var(--section-padding);
+    color: var(--text-primary);
+    box-sizing: border-box;
+}
+
+.section-inner {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+}
+
+.section-header {
+    width: 100%;
+    max-width: var(--container-md);
+    margin: 0 0 44px;
+}
+
+.section-header.centered {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section-eyebrow,
+.tag,
+.pill-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 28px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    background: rgba(45, 58, 58, 0.34);
+    color: rgba(247, 251, 251, 0.86);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    line-height: 1;
+}
+
+.section-title {
+    margin: 0 0 16px;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: 0.08rem;
+}
+
+.section-description {
+    margin: 0;
+    max-width: 760px;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.16rem);
+    line-height: 1.6;
+}
+
+.content-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+}
+
+.portfolio-card {
+    padding: var(--card-padding);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
+        var(--bg-card);
+    box-shadow: var(--shadow-card);
+    box-sizing: border-box;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    background-color: var(--bg-card-hover);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-control);
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.button-link:hover {
+    border-color: rgba(116, 192, 252, 0.44);
+    background-color: var(--accent-soft);
+}
+
+@media (max-width: 760px) {
+    .section-container {
+        padding: var(--section-padding-mobile);
+    }
+
+    .section-header {
+        margin-bottom: 34px;
+    }
+
+    .portfolio-card {
+        padding: var(--card-padding-mobile);
+    }
 }

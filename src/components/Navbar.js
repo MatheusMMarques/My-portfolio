@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import '../css/Navbar.css';
 
@@ -10,19 +10,43 @@ const navItems = [
   { label: 'CONTATO', target: 'contact' },
 ];
 
+const scrollOptions = {
+  smooth: true,
+  duration: 500,
+  offset: -72,
+};
+
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <header className="header">
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Navegação principal">
         <div className="navbar-left">
-          <Link to="about" smooth={true} duration={500}>
+          <Link to="about" {...scrollOptions} onClick={closeMenu}>
             <h1>MATHEUS.</h1>
           </Link>
         </div>
-        <ul className="navbar-links">
+
+        <button
+          className={`navbar-toggle ${isMenuOpen ? 'is-open' : ''}`}
+          type="button"
+          aria-label={isMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
+          aria-expanded={isMenuOpen}
+          aria-controls="navbar-menu"
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <ul id="navbar-menu" className={`navbar-links ${isMenuOpen ? 'is-open' : ''}`}>
           {navItems.map((item) => (
             <li key={item.label}>
-              <Link className="animatedLink" to={item.target} smooth={true} duration={500}>
+              <Link className="animatedLink" to={item.target} {...scrollOptions} onClick={closeMenu}>
                 {item.label}
               </Link>
             </li>

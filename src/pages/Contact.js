@@ -17,9 +17,13 @@ const Contact = () => {
   });
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState('');
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSending(true);
+    setEmailSent(false);
+    setEmailError('');
 
     emailjs.sendForm(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -32,7 +36,9 @@ const Contact = () => {
       setEmailError('');
     }, (error) => {
       console.error('Error sending email:', error.text);
-      setEmailError('Erro ao enviar o e-mail. Por favor, tente novamente.');
+      setEmailError('Não foi possível enviar agora. Tente novamente ou use os links de contato.');
+    }).finally(() => {
+      setIsSending(false);
     });
 
     setFormData({
@@ -45,13 +51,14 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setEmailSent(false);
+    setEmailError('');
   };
 
   return (
-    <section className='contact-container'>
-      <div className='infos-content'>
-        <div className='about-me-box'>
-          <span className="contact-label">CONTATO</span>
+    <section className='contact-container section-container'>
+      <div className='infos-content section-inner'>
+        <div className='about-me-box portfolio-card'>
+          <span className="contact-label section-eyebrow">CONTATO</span>
           <div className='title-contact'>
             <h2>VAMOS CONVERSAR?</h2>
           </div>
@@ -65,32 +72,48 @@ const Contact = () => {
           </p>
           <p>
             Para trocar uma ideia sobre tecnologia, projetos ou oportunidades futuras, você pode me chamar pelo
-            LinkedIn, GitHub, e-mail ou enviar uma mensagem pelo formulário.
+            LinkedIn, e-mail ou enviar uma mensagem pelo formulário.
           </p>
 
-          <div className="quick-links">
+          <div className="quick-links tag-list">
             {quickLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+              <a className="pill-link" key={link.label} href={link.href} target="_blank" rel="noreferrer">
                 {link.label}
               </a>
             ))}
           </div>
         </div>
 
-        <div className='form-content'>
-          <div className='title-contact'>
-            <h2>ENVIE UMA MENSAGEM</h2>
+        <div className='form-content portfolio-card'>
+          <div className="form-heading">
+            <div className='title-contact'>
+              <h2>ENVIE UMA MENSAGEM</h2>
+            </div>
+            <p>Use o formulário para uma mensagem direta ou escolha um dos links ao lado.</p>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <input type="text" id="name" name="name" placeholder='Seu nome' value={formData.name} onChange={handleChange} required />
-              <input type="email" id="email" name="email" placeholder='Seu e-mail' value={formData.email} onChange={handleChange} required />
+              <label className="field-control" htmlFor="name">
+                <span>Nome</span>
+                <input type="text" id="name" name="name" placeholder='Seu nome' value={formData.name} onChange={handleChange} required />
+              </label>
+              <label className="field-control" htmlFor="email">
+                <span>E-mail</span>
+                <input type="email" id="email" name="email" placeholder='Seu e-mail' value={formData.email} onChange={handleChange} required />
+              </label>
             </div>
-            <textarea id="message" name="message" placeholder='Conte rapidamente sobre a oportunidade, projeto ou mensagem' value={formData.message} onChange={handleChange} required />
-            <button className='btn' type="submit">Enviar mensagem</button>
+            <label className="field-control" htmlFor="message">
+              <span>Mensagem</span>
+              <textarea id="message" name="message" placeholder='Conte rapidamente sobre a oportunidade, projeto ou mensagem' value={formData.message} onChange={handleChange} required />
+            </label>
+            <button className='btn' type="submit" disabled={isSending}>
+              {isSending ? 'Enviando...' : 'Enviar mensagem'}
+            </button>
           </form>
-          {emailSent && <p className="success-message">E-mail enviado com sucesso!</p>}
-          {emailError && <p className="error-message">{emailError}</p>}
+          <div className="form-feedback" aria-live="polite">
+            {emailSent && <p className="success-message">Mensagem enviada com sucesso.</p>}
+            {emailError && <p className="error-message">{emailError}</p>}
+          </div>
         </div>
       </div>
     </section>
